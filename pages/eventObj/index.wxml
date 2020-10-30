@@ -1,0 +1,5 @@
+<!-- pages/eventObj/index.wxml -->
+ <wxs module="wxs" src="../../utils/fileSystem.wxs" />
+<view class="eventObj">
+<view id="tapTest" data-hi="WeChat" bindtap="{{wxs.tapName}}"> Click me! </view>
+</view>

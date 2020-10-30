@@ -1,0 +1,36 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.root_tabs{
+  
+}
+.root_nav{
+
+}
+.root_tab{
+
+}
+.root_tabs_active{
+  /* background-color: #99FF00; */
+}
+.root_content .item{
+  line-height: 100rpx;
+}

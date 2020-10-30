@@ -1,0 +1,5 @@
+<!-- components/upload/index.wxml -->
+<form bindsubmit="submit">
+  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+  <!-- <button form-type="submit" bind:tap="submit">submit</button> -->
+</form>

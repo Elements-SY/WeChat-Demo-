@@ -1,0 +1,10 @@
+<view>
+<text class="">
+  Antv canvas数据可视化组件库;npm i @antv/f2-canvas @antv/wx-f2 --save不可使用cnpm下载因为会缺省部分模块 
+</text>
+<lineChart style="display:block;width: 300px; height: 200px;" data="{{chartData}}"></lineChart>
+<lineCanvas style="display:block;" params="{{params}}"></lineCanvas>
+<pieCanvas style="display:block" params="{{pieParams}}" />
+</view>
+
+

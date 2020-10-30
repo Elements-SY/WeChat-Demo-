@@ -1,0 +1,4 @@
+<!-- pages/upLoad/index.wxml -->
+<view class="up_load">
+  <button class="btn" type="primary" bindtap="upLoadFiles">upLoadFiles</button>
+</view>

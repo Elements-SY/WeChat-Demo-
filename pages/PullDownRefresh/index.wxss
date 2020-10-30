@@ -1,0 +1,41 @@
+.nav_meun {
+  /* margin-top: 60rpx; */
+}
+
+.tabs {}
+
+.tabs_meun {
+  margin-bottom: 50rpx;
+}
+
+.header {}
+
+.meun {
+  display: flex;
+}
+
+.meun view{
+  flex: 1;
+  text-align: center;
+}
+.scroll_view_y .scroll_view {
+  height: 300rpx;
+}
+
+.scroll_view_x .scroll_view {
+  white-space: nowrap;
+}
+
+.scroll_view_y .meun_container_item {
+  line-height: 150rpx;
+}
+
+.scroll_view_x .meun_container_item {
+  display: inline-block;
+  width: 100%;
+  padding: 8rpx 8px;
+}
+
+.meun_container .meun_container_item {
+  text-align: center;
+}

@@ -1,0 +1,145 @@
+/* pages/authInfo/auth-info.wxss */
+page {
+  background: #F4F1F4;
+}
+
+.form {
+  margin-bottom: 92rpx;
+}
+
+.cell_root {
+  /* margin-top: 10rpx; */
+  padding: 10rpx 40rpx !important;
+}
+
+.title_input {
+  padding-left: 8rpx;
+}
+
+.title_value {
+  flex: 2 !important;
+}
+
+.right_value {
+  flex: 1 !important;
+}
+
+.input_title_value {
+  flex: 1 !important;
+}
+
+.input_right_value {
+  flex: 2 !important;
+}
+
+.title_text {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000 !important;
+}
+
+.label_text {
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #656565 !important;
+}
+
+.right_value {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #241DA1 !important;
+}
+
+.title_input .van-cell {
+  padding: 0 !important;
+}
+
+.id_card {
+  padding: 39rpx 40rpx 0rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+
+.image_card {
+  position: relative;
+  width: 300rpx;
+  height: 191rpx;
+}
+
+.image_card image:nth-of-type(1) {
+  width: 300rpx;
+  height: 191rpx;
+}
+
+.image_card image:nth-of-type(2) {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.footer {
+  width: 100%;
+  /* position: absolute; */
+  bottom: 20rpx;
+  padding: 0 40rpx 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 100%;
+  font-size: 36rpx !important;
+  font-weight: 500;
+  background-color: #241DA1 !important;
+  color: #fff !important;
+}
+
+.state_title {
+  text-align: center;
+  font-size: 36rpx;
+  color: #999;
+  font-weight: 500;
+  margin-bottom: 37rpx;
+}
+
+.item {
+  padding: 0 50rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell_item {
+  /* display: flex; */
+  margin-top: 37rpx;
+}
+
+.cell_btn {
+  width: 260rpx;
+  border-radius: 29rpx !important;
+  background-color: #F4F4F8 !important;
+  height: 57rpx !important;
+  line-height: 57rpx !important;
+  font-size: 32rpx !important;
+  font-weight: 500 !important;
+  color: #000 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin-bottom: 45rpx;
+}
+
+.odd {}
+
+.even {
+  margin-left: 130rpx !important;
+}

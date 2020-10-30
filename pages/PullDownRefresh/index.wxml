@@ -1,0 +1,57 @@
+<view class="nav_meun">
+  <view class="tabs">
+    <view class="tabs_meun">
+      <view class="header meun">
+        <view class="meun_item" 
+          wx:for="{{ meunList }}" 
+          wx:key="index" 
+          data-id="{{ index }}"
+          bindtap="eventClick">
+          <text>{{ item }}</text>
+        </view>
+      </view>
+      <view class="meun_container scroll_view_y">
+        <scroll-view class="scroll_view"
+          bindscroll="scroll" 
+          bindscrolltolower="scrollToLower"           
+          bindscrolltoupper="scrollToupper"
+          bindrefresherrefresh="pullDownRefresh"
+          scroll-y="{{ verticalConfig.scrollY }}"  
+          scroll-into-view="{{ verticalConfig.scrollIntoView }}" 
+          scroll-top="{{ verticalConfig.scrollTop }}" 
+          enable-back-to-top="{{ verticalConfig.enableBackToTop }}"
+          refresher-background="{{ verticalConfig.refresherBackground }}"
+          refresher-enabled="{{ verticalConfig.refresherEnabled }}"
+          refresher-triggered="{{ verticalConfig.refresherTriggered }}"    
+        >
+          <view class="meun_container_item" 
+            wx:for="{{ meunConten }}" 
+            wx:key="*this">{{ item }}</view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view class="tabs_meun">
+      <view class="header meun">
+        <view class="meun_item" 
+          wx:for="{{ meunList }}" 
+          wx:key="index" 
+          data-id="{{ index }}"
+          bindtap="eventClick">
+          <text>{{ item }}</text>
+        </view>
+      </view>
+      <view class="meun_container scroll_view_x">
+        <scroll-view class="scroll_view"
+          bindscroll="scroll" 
+          scroll-x="true" 
+        >
+          <view class="meun_container_item" 
+            wx:for="{{ meunConten }}" 
+            wx:key="*this">{{ item }}</view>
+        </scroll-view>
+      </view>
+    </view>
+    
+  </view>
+</view>

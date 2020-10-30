@@ -1,0 +1,6 @@
+<view class="location">
+  <block>
+    <button wx:if="{{ldata}}" bindtap='getLocationHander'>获取位置信息</button>
+    <button wx:else open-type="openSetting" bindopensetting='getAuthLocation'>点击授权并获取位置信息</button>
+  </block>
+</view>

@@ -1,0 +1,45 @@
+<!-- pages/authInfo/auth-info.wxml -->
+<view class="container">
+  <view class="form">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="card_item">
+        <view class="id_card">
+          <view class="front card" bindtap="compressionImage">
+            <view class="card_title">身份证(正）</view>
+            <view class="image_card" wx:if="{{id_card.image.front_url == ''}}">
+              <image src="../../images/front_id_card.png"></image>
+              <image src="../../images/add.png"></image>
+            </view>
+            <view class="image_card" data-images="{{id_card.image}}" wx:else>
+              <image src="{{id_card.image.front_url}}"></image>
+            </view>
+          </view>
+          <view class="back card" bindtap="chooseBackImage">
+            <view class="card_title">身份证(反）</view>
+            <view class="image_card" wx:if="{{id_card.image.back_url == ''}}">
+              <image src="../../images/back_id_card.png"></image>
+              <image src="../../images/add.png"></image>
+            </view>
+            <view class="image_card" data-images="{{id_card.image}}" wx:else>
+              <image src="{{id_card.image.back_url}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="card_item">
+        <view class="id_card">
+          <view class="card" bindtap="chooseDriverImage">
+            <view class="card_title">驾驶证</view>
+            <view class="image_card" wx:if="{{driver_card.url == ''}}">
+              <image src="../../images/diver_card.png"></image>
+              <image src="../../images/add.png"></image>
+            </view>
+            <view class="image_card" data-images="{{driver_card.url}}" wx:else>
+              <image src="{{driver_card.url}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>
