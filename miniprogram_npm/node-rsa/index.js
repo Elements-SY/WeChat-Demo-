@@ -1,10 +1,10 @@
 module.exports = (function() {
 var __MODS__ = {};
-var __DEFINE__ = function(modId, func, req) { var m = { exports: {} }; __MODS__[modId] = { status: 0, func: func, req: req, m: m }; };
-var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = { exports: {} }; __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); if(typeof m.exports === "object") { __MODS__[modId].m.exports.__proto__ = m.exports.__proto__; Object.keys(m.exports).forEach(function(k) { __MODS__[modId].m.exports[k] = m.exports[k]; var desp = Object.getOwnPropertyDescriptor(m.exports, k); if(desp && desp.configurable) Object.defineProperty(m.exports, k, { set: function(val) { __MODS__[modId].m.exports[k] = val; }, get: function() { return __MODS__[modId].m.exports[k]; } }); }); if(m.exports.__esModule) Object.defineProperty(__MODS__[modId].m.exports, "__esModule", { value: true }); } else { __MODS__[modId].m.exports = m.exports; } } return __MODS__[modId].m.exports; };
+var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexports: {} }; __MODS__[modId] = { status: 0, func: func, req: req, m: m }; };
+var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1598952716292, function(require, module, exports) {
+__DEFINE__(1604067022433, function(require, module, exports) {
 /*!
  * RSA library for Node.js
  *
@@ -404,8 +404,8 @@ module.exports = (function () {
     return NodeRSA;
 })();
 
-}, function(modId) {var map = {"./libs/rsa.js":1598952716293,"./utils":1598952716294,"./schemes/schemes.js":1598952716296,"./formats/formats.js":1598952716304}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716293, function(require, module, exports) {
+}, function(modId) {var map = {"./libs/rsa.js":1604067022434,"./utils":1604067022435,"./schemes/schemes.js":1604067022437,"./formats/formats.js":1604067022445}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022434, function(require, module, exports) {
 /*
  * RSA Encryption / Decryption with PKCS1 v2 Padding.
  * 
@@ -723,8 +723,8 @@ module.exports.Key = (function () {
 })();
 
 
-}, function(modId) { var map = {"../utils":1598952716294,"./jsbn.js":1598952716295,"../utils.js":1598952716294,"../schemes/schemes.js":1598952716296,"../encryptEngines/encryptEngines.js":1598952716300}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716294, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1604067022435,"./jsbn.js":1604067022436,"../utils.js":1604067022435,"../schemes/schemes.js":1604067022437,"../encryptEngines/encryptEngines.js":1604067022441}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022435, function(require, module, exports) {
 /*
  * Utils functions
  *
@@ -834,7 +834,7 @@ module.exports.trimSurroundingText = function (data, opening, closing) {
     return data.substring(trimStartIndex, trimEndIndex);
 }
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716295, function(require, module, exports) {
+__DEFINE__(1604067022436, function(require, module, exports) {
 /*
  * Basic JavaScript BN library - subset useful for RSA encryption.
  * 
@@ -2375,8 +2375,8 @@ BigInteger.prototype.square = bnSquare;
 //static BigInteger valueOf(long val)
 
 module.exports = BigInteger;
-}, function(modId) { var map = {"../utils":1598952716294}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716296, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1604067022435}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022437, function(require, module, exports) {
 module.exports = {
     pkcs1: require('./pkcs1'),
     pkcs1_oaep: require('./oaep'),
@@ -2400,8 +2400,8 @@ module.exports = {
         return module.exports[scheme] && module.exports[scheme].isSignature;
     }
 };
-}, function(modId) { var map = {"./pkcs1":1598952716297,"./oaep":1598952716298,"./pss":1598952716299}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716297, function(require, module, exports) {
+}, function(modId) { var map = {"./pkcs1":1604067022438,"./oaep":1604067022439,"./pss":1604067022440}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022438, function(require, module, exports) {
 /**
  * PKCS1 padding and signature scheme
  */
@@ -2641,8 +2641,8 @@ module.exports.makeScheme = function (key, options) {
 
 
 
-}, function(modId) { var map = {"../libs/jsbn":1598952716295}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716298, function(require, module, exports) {
+}, function(modId) { var map = {"../libs/jsbn":1604067022436}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022439, function(require, module, exports) {
 /**
  * PKCS_OAEP signature scheme
  */
@@ -2823,8 +2823,8 @@ module.exports.makeScheme = function (key, options) {
     return new Scheme(key, options);
 };
 
-}, function(modId) { var map = {"../libs/jsbn":1598952716295}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716299, function(require, module, exports) {
+}, function(modId) { var map = {"../libs/jsbn":1604067022436}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022440, function(require, module, exports) {
 /**
  * PSS signature scheme
  */
@@ -3009,8 +3009,8 @@ module.exports.makeScheme = function (key, options) {
     return new Scheme(key, options);
 };
 
-}, function(modId) { var map = {"../libs/jsbn":1598952716295,"./schemes":1598952716296}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716300, function(require, module, exports) {
+}, function(modId) { var map = {"../libs/jsbn":1604067022436,"./schemes":1604067022437}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022441, function(require, module, exports) {
 var crypt = require('crypto');
 
 module.exports = {
@@ -3028,8 +3028,8 @@ module.exports = {
         return engine(keyPair, options);
     }
 };
-}, function(modId) { var map = {"./js.js":1598952716301,"./io.js":1598952716302,"./node12.js":1598952716303}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716301, function(require, module, exports) {
+}, function(modId) { var map = {"./js.js":1604067022442,"./io.js":1604067022443,"./node12.js":1604067022444}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022442, function(require, module, exports) {
 var BigInteger = require('../libs/jsbn.js');
 var schemes = require('../schemes/schemes.js');
 
@@ -3064,8 +3064,8 @@ module.exports = function (keyPair, options) {
         }
     };
 };
-}, function(modId) { var map = {"../libs/jsbn.js":1598952716295,"../schemes/schemes.js":1598952716296}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716302, function(require, module, exports) {
+}, function(modId) { var map = {"../libs/jsbn.js":1604067022436,"../schemes/schemes.js":1604067022437}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022443, function(require, module, exports) {
 var crypto = require('crypto');
 var constants = require('constants');
 var schemes = require('../schemes/schemes.js');
@@ -3138,8 +3138,8 @@ module.exports = function (keyPair, options) {
         }
     };
 };
-}, function(modId) { var map = {"../schemes/schemes.js":1598952716296}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716303, function(require, module, exports) {
+}, function(modId) { var map = {"../schemes/schemes.js":1604067022437}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022444, function(require, module, exports) {
 var crypto = require('crypto');
 var constants = require('constants');
 var schemes = require('../schemes/schemes.js');
@@ -3196,8 +3196,8 @@ module.exports = function (keyPair, options) {
         }
     };
 };
-}, function(modId) { var map = {"../schemes/schemes.js":1598952716296,"./js.js":1598952716301}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716304, function(require, module, exports) {
+}, function(modId) { var map = {"../schemes/schemes.js":1604067022437,"./js.js":1604067022442}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022445, function(require, module, exports) {
 var _ = require('../utils')._;
 
 function formatParse(format) {
@@ -3294,8 +3294,8 @@ module.exports = {
         }
     }
 };
-}, function(modId) { var map = {"../utils":1598952716294,"./pkcs1":1598952716305,"./pkcs8":1598952716306,"./components":1598952716307}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716305, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1604067022435,"./pkcs1":1604067022446,"./pkcs8":1604067022447,"./components":1604067022448}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022446, function(require, module, exports) {
 var ber = require('asn1').Ber;
 var _ = require('../utils')._;
 var utils = require('../utils');
@@ -3444,8 +3444,8 @@ module.exports = {
         return false;
     }
 };
-}, function(modId) { var map = {"../utils":1598952716294}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716306, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1604067022435}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022447, function(require, module, exports) {
 var ber = require('asn1').Ber;
 var _ = require('../utils')._;
 var PUBLIC_RSA_OID = '1.2.840.113549.1.1.1';
@@ -3634,8 +3634,8 @@ module.exports = {
     }
 };
 
-}, function(modId) { var map = {"../utils":1598952716294}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1598952716307, function(require, module, exports) {
+}, function(modId) { var map = {"../utils":1604067022435}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1604067022448, function(require, module, exports) {
 var _ = require('../utils')._;
 var utils = require('../utils');
 
@@ -3708,7 +3708,7 @@ module.exports = {
     }
 };
 
-}, function(modId) { var map = {"../utils":1598952716294}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1598952716292);
+}, function(modId) { var map = {"../utils":1604067022435}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1604067022433);
 })()
 //# sourceMappingURL=index.js.map
